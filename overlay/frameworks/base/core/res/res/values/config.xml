@@ -27,6 +27,9 @@
     <string name="config_datause_iface">rmnet_sdio0</string>
 
     <bool name="config_automatic_brightness_available">true</bool>
+    
+    <!-- device supports led flashlight -->
+    <bool name="config_enableTorch">true</bool>
 
     <!-- These are all dummies, but need to be present to enable UI control of auto-brightness
                   The actual control and values are all in-kernel -->
