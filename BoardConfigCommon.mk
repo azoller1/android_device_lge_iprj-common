@@ -53,6 +53,7 @@ TARGET_FORCE_CPU_UPLOAD := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_EGL_CFG := device/lge/iprj-common/egl.cfg
 TARGET_USES_ION := true
+BOARD_USES_QC_TIME_SERVICES := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -87,6 +88,7 @@ BOARD_HAVE_BACK_MIC_CAMCORDER := true
 
 COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DQCOM_ACDB_ENABLED
 BOARD_NEEDS_MEMORYHEAPPMEM := true
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 ## This is evil. The mt9m114 (FFC) data inside the liboemcamera blob is in the .bss section,
 ## and inaccessible if PIE is enabled
@@ -104,8 +106,10 @@ ENABLE_WEBGL := true
 
 TARGET_QCOM_DISPLAY_VARIANT := caf
 TARGET_QCOM_AUDIO_VARIANT := caf
+BOARD_USES_LEGACY_ALSA_AUDIO := true
 BOARD_BLUEDROID_VENDOR_CONF := device/lge/iprj-common/vnd_bt.txt
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 BOARD_SEPOLICY_DIRS += \
         device/lge/iprj-common/sepolicy
@@ -131,3 +135,4 @@ BOARD_SEPOLICY_UNION += \
 	wpa.te
 
 BOARD_HARDWARE_CLASS := device/lge/iprj-common/cmhw/
+
